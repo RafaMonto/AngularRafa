@@ -1,0 +1,49 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Kablammo&family=Merriweather+Sans:ital,wght@1,300&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+<div *ngIf="articulos != null; else espera">
+  <table
+    border="1"
+    class="styled-table"
+    style="
+      font-family: 'Inter', sans-serif;
+      font-family: 'Kablammo', cursive;
+      font-family: 'Merriweather Sans', sans-serif;
+      font-family: 'Montserrat', sans-serif;
+    "
+  >
+    <thead>
+      <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Status</td>
+        <td>Species</td>
+        <td>Type</td>
+        <td>Gender</td>
+        <td>Origin</td>
+        <td>Location</td>
+        <td>Image</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let art of articulos">
+        <td>{{ art.id }}</td>
+        <td>{{ art.name }}</td>
+        <td>{{ art.status }}</td>
+        <td>{{ art.species }}</td>
+        <td>{{ art.type }}</td>
+        <td>{{ art.gender }}</td>
+        <td>
+          <p>{{ art.origin.name }}</p>
+          <p>{{ art.origin.url }}</p>
+        </td>
+        <td>
+          <p>{{ art.location.name }}</p>
+          <p>{{ art.location.url }}</p>
+        </td>
+        <td><img [src]="art.image" alt="{{ art.image }}" /></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<ng-template #espera>Esperando datos...</ng-template>

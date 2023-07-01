@@ -1,0 +1,28 @@
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.reloj {
+    width: 20rem;
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', monospace;
+    font-size: 4rem;
+    color: #F00404;
+    text-shadow: 0 0 10px #F00404, 0 0 20px #F00404, 0 0 30px #F00404, 0 0 40px #F00404, 0 0 50px #F00404;
+}
+
+.separador {
+    margin: 0 0.5rem;
+    font-size: 3.5rem;
+}
+
+.hora, .minuto, .segundo {
+    padding: 0 0.5rem;
+    border-radius: 5%;
+}

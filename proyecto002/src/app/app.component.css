@@ -1,0 +1,9 @@
+input{
+    display: inline-block;
+    margin-top:15px;
+}
+
+.add, .up{
+    display: inline-block;
+    margin-top: 15px;
+}

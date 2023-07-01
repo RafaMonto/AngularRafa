@@ -1,0 +1,33 @@
+<h1>Administración de artículos</h1>
+<table border>
+  <thead>
+    <tr>
+      <td><b>Codigo</b></td>
+      <td><b>Descripción</b></td>
+      <td><b>Precio</b></td>
+      <td><b>Borrar</b></td>
+      <td><b>Seleccionar</b></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of articulos; let i = index">
+      <td>{{item.codigo}}</td>
+      <td>{{item.descripcion}}</td>
+      <td>{{item.precio}}</td>
+      <td><button (click) = "borrar(i)">Borrar?</button></td>
+      <td><button (click) = "seleccionar(item)">Seleccionar</button></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<div>
+  <label for="cod"><b>Codigo:</b></label><input type="number" name="cod" value="0" [(ngModel)]="valorCodigo">
+  <br>
+  <label for="des"></label><b>Descripción:</b><input type="text" name="des" [(ngModel)]="valorDescripcion">
+  <br>
+  <label for="pre"></label><b>Precio:</b><input type="number" name="pre" value="0" [(ngModel)]="valorPrecio">
+  <div>
+    <button class="add" (click) = "agregar()">Agregar</button>
+    <button class="up" (click) = "modificar()">Modificar</button>
+  </div>
+</div>

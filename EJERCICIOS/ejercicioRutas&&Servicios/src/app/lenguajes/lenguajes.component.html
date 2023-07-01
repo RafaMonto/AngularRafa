@@ -1,0 +1,15 @@
+<div *ngIf="lenguajes != null; else espera">
+    <table border="1" class="styled-table">
+      <thead>
+        <tr>
+          <td>Name</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let len of lenguajes">
+          <td>{{ len.name }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <ng-template #espera>Esperando datos...</ng-template>

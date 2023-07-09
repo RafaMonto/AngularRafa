@@ -1,0 +1,91 @@
+<div class="container-fluid">
+  <div class="row align-items-stretch">
+    <div class="col-lg-4 d-none d-lg-block bg-warning d-flex flex-column align-items-center justify-content-center min-vh-100">
+      <div class="align-self-center w-100 px-lg-5 py-lg-4 p-4">
+      <h1 class="font-weight-bold mb-4 mt-5">Ingrese Datos</h1>
+      <form >
+        <input
+          type="text"
+          [(ngModel)]="ciudadano.nombre"
+          name="nombre"
+          class="form-control mb-3"
+          placeholder="Nombre"
+          autocomplete="off"
+        />
+        <input
+          type="text"
+          [(ngModel)]="ciudadano.apellido"
+          name="apellido"
+          class="form-control mb-3"
+          placeholder="Apellido"
+          autocomplete="off"
+        />
+        <input
+          type="number"
+          [(ngModel)]="ciudadano.cedula"
+          name="cedula"
+          class="form-control mb-3"
+          placeholder="Cedula"
+          autocomplete="off"
+        />
+        <input
+          type="Date"
+          [(ngModel)]="ciudadano.fecha_nac"
+          name="fecha_nac"
+          class="form-control mb-3"
+          placeholder="FechaNacimiento"
+          autocomplete="off"
+        />
+        <input
+          type="text"
+          name="categoria"
+          [(ngModel)]="ciudadano.categoria"
+          class="form-control mb-3"
+          placeholder="Categoria"
+          maxlength="2"
+          autocomplete="off"
+        />
+        <input
+          type="Date"
+          name="fecha_expedicion"
+          [(ngModel)]="ciudadano.fecha_expedicion"
+          class="form-control mb-3"
+          placeholder="FechaExpedicion"
+          autocomplete="off"
+        />
+        <input (click)="agregar()" type="submit" class="btn btn-dark" value="Agregar" />
+        <input (click)="modificar()" type="submit" class="btn btn-dark m-1" value="Modificar"/>
+      </form>
+      </div>
+    </div>
+    <div class="col-lg-8 d-flex flex-column align-items-end min-vh-100 bg-dark">
+      <div class="align-self-center w-100 px-lg-5 py-lg-4 p-4">
+        <table class="table">
+          <thead class="table table-dark table-striped-columns">
+            <tr>
+              <th>Nombre</th>
+              <th >Apellido</th>
+              <th >cedula</th>
+              <th >FechaNacimiento</th>
+              <th >Categoria</th>
+              <th >FechaExpedicion</th>
+              <th>Seleccion</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let c of ciudadanos">
+              <td class="table-dark">{{c.nombre}}</td>
+              <td class="table-dark">{{c.apellido}}</td>
+              <td class="table-dark">{{c.cedula}}</td>
+              <td class="table-dark">{{c.fecha_nac}}</td>
+              <td class="table-dark">{{c.categoria}}</td>
+              <td class="table-dark">{{c.fecha_expedicion}}</td>
+              <td class="table-dark"><button class="btn btn-danger" (click)="borrar(c.cedula)">Borrar</button><button class="btn btn-info" (click)="seleccionar(c.cedula)">Seleccionar</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+

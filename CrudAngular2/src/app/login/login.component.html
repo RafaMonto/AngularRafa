@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <div class="row align-items-stretch">
+      <div class="col-6 d-none d-lg-block">
+          <div class="hero">
+              <div class="bubbles">
+                  <img [src]="img" id="img">
+              </div>
+
+          </div>
+      </div>
+      <div class="col-lg-6 bg-dark d-flex flex-column align-items-center justify-content-center min-vh-100">
+          <div class="align-self-center w-100 px-lg-5 py-lg-4 p-4">
+              <h1 class="font-weight-bold mb-4 mt-5 text-light">Bienvenido de vuelta</h1>
+              <form class="mb-5" method="post" (ngSubmit)="loginUsuario()">
+                  <div class="mb-4">
+                      <label for="User" class="form-label font-weight-bold text-light">Email</label>
+                      <input type="email" class="form-control bg-dark-x border-0" id="User" placeholder="Ingresa su correo" aria-describedby="emailHelp" autocomplete="off" name="email" [(ngModel)]="login.email">
+                  </div>
+                  <div class="mb-4">
+                      <label for="Password" class="form-label font-weight-bold text-light">Contraseña</label>
+                      <input type="password" class="form-control bg-dark-x border-0 mb-2" placeholder="Ingresa tu contraseña" id="Password" autocomplete="off" name="pass" [(ngModel)]="login.pass">
+                  </div>
+                  <button type="submit" class="btn btn-info w-100" name="login" >Iniciar sesión</button>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
